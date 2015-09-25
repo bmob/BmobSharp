@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE007CD7-75A3-4839-A074-6A9732CB7CA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cn.bmob</RootNamespace>
+    <AssemblyName>Bmob-Unity</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Unity</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Unity</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Bmob-Unity.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="UnityEditor">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\Bmob.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\Bmob.OO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\Bmob.Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\BmobUnity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\BmobWindows.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="api\BmobWindowsPhone.cs" />
+    <Compile Include="api\IBmobAPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="exception\BmobException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\MiscExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="http\BmobCommand.cs" />
+    <Compile Include="http\BmobInteractionObject.cs" />
+    <Compile Include="http\Http.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\basic\BmobBoolean.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\basic\BmobDouble.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\basic\BmobInt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\basic\BmobLong.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\basic\BmobNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobACL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobGeoPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobInput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobInstallation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobKV.cs" />
+    <Compile Include="io\BmobObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobOutput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobPointer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\BmobTable2.cs" />
+    <Compile Include="io\IBmobOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\IBmobValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\IBmobWritable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\Add.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\AddRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\AddUnique.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\Delete.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\Increment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\Operate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\Remove.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\operator\RemoveRelation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\paramater\BmobBatch.cs" />
+    <Compile Include="io\paramater\BmobRemote.cs" />
+    <Compile Include="io\paramater\BmobLocalFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\paramater\PushParamter.cs" />
+    <Compile Include="io\paramater\ThumbnailParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="json\JsonAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="json\SimpleJson.cs" />
+    <Compile Include="json\SimpleJsonParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="response\BmobResponseParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Create.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Delete.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Empty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\EndPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Query.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Status.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Update.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="response\Upload.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\BmobArrays.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\BmobDebug.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\Utilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
