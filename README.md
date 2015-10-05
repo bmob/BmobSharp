@@ -10,6 +10,8 @@ Bmob Api Client for .Net
 
 源代码中注释比较少，如果对源码中功能弄的不是很明白，查看[文档](https://github.com/bmob/bmob-demo-csharp/wiki)对理解代码和使用有更深的认识。
 
+* <https://github.com/bmob/bmob-demo-csharp/wiki>
+
 # 开发环境搭建
 
 * 软件下载/安装
