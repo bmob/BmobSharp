@@ -1,4 +1,5 @@
-﻿using cn.bmob.api;
+﻿/*
+using cn.bmob.api;
 using cn.bmob.io;
 using cn.bmob.response;
 using System;
@@ -33,3 +34,4 @@ namespace cn.bmob.Extensions
         }
     }
 }
+*/
