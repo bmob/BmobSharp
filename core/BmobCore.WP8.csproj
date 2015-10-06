@@ -87,180 +87,180 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="api\Bmob.cs">
+    <Compile Include="src\api\Bmob.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="api\Bmob.OO.cs">
+    <Compile Include="src\api\Bmob.OO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="api\Bmob.Task.cs">
+    <Compile Include="src\api\Bmob.Task.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="api\BmobUnity.cs">
+    <Compile Include="src\api\BmobUnity.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="api\BmobWindows.cs">
+    <Compile Include="src\api\BmobWindows.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="api\BmobWindowsPhone.cs" />
-    <Compile Include="api\IBmobAPI.cs">
+    <Compile Include="src\api\BmobWindowsPhone.cs" />
+    <Compile Include="src\api\IBmobAPI.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="config\Configuration.cs">
+    <Compile Include="src\config\Configuration.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="exception\BmobException.cs">
+    <Compile Include="src\exception\BmobException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Extensions\MiscExtensions.cs">
+    <Compile Include="src\Extensions\MiscExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="http\BmobCommand.cs" />
-    <Compile Include="http\BmobInteractionObject.cs" />
-    <Compile Include="http\Http.cs">
+    <Compile Include="src\http\BmobCommand.cs" />
+    <Compile Include="src\http\BmobInteractionObject.cs" />
+    <Compile Include="src\http\Http.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\basic\BmobBoolean.cs">
+    <Compile Include="src\io\basic\BmobBoolean.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\basic\BmobDouble.cs">
+    <Compile Include="src\io\basic\BmobDouble.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\basic\BmobInt.cs">
+    <Compile Include="src\io\basic\BmobInt.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\basic\BmobLong.cs">
+    <Compile Include="src\io\basic\BmobLong.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\basic\BmobNumber.cs">
+    <Compile Include="src\io\basic\BmobNumber.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobACL.cs">
+    <Compile Include="src\io\BmobACL.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobDate.cs">
+    <Compile Include="src\io\BmobDate.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobFile.cs">
+    <Compile Include="src\io\BmobFile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobGeoPoint.cs">
+    <Compile Include="src\io\BmobGeoPoint.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobInput.cs">
+    <Compile Include="src\io\BmobInput.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobInstallation.cs">
+    <Compile Include="src\io\BmobInstallation.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobKV.cs" />
-    <Compile Include="io\BmobObject.cs">
+    <Compile Include="src\io\BmobKV.cs" />
+    <Compile Include="src\io\BmobObject.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobOutput.cs">
+    <Compile Include="src\io\BmobOutput.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobPointer.cs">
+    <Compile Include="src\io\BmobPointer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobQuery.cs">
+    <Compile Include="src\io\BmobQuery.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobRelation.cs">
+    <Compile Include="src\io\BmobRelation.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobRole.cs">
+    <Compile Include="src\io\BmobRole.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobTable.cs">
+    <Compile Include="src\io\BmobTable.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobUser.cs">
+    <Compile Include="src\io\BmobUser.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\BmobTable2.cs" />
-    <Compile Include="io\IBmobOperator.cs">
+    <Compile Include="src\io\BmobTable2.cs" />
+    <Compile Include="src\io\IBmobOperator.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\IBmobValue.cs">
+    <Compile Include="src\io\IBmobValue.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\IBmobWritable.cs">
+    <Compile Include="src\io\IBmobWritable.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\Add.cs">
+    <Compile Include="src\io\operator\Add.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\AddRelation.cs">
+    <Compile Include="src\io\operator\AddRelation.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\AddUnique.cs">
+    <Compile Include="src\io\operator\AddUnique.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\Delete.cs">
+    <Compile Include="src\io\operator\Delete.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\Increment.cs">
+    <Compile Include="src\io\operator\Increment.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\Operate.cs">
+    <Compile Include="src\io\operator\Operate.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\Remove.cs">
+    <Compile Include="src\io\operator\Remove.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\operator\RemoveRelation.cs">
+    <Compile Include="src\io\operator\RemoveRelation.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\paramater\BmobBatch.cs" />
-    <Compile Include="io\paramater\BmobRemote.cs" />
-    <Compile Include="io\paramater\BmobLocalFile.cs">
+    <Compile Include="src\io\paramater\BmobBatch.cs" />
+    <Compile Include="src\io\paramater\BmobRemote.cs" />
+    <Compile Include="src\io\paramater\BmobLocalFile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="io\paramater\PushParamter.cs" />
-    <Compile Include="io\paramater\ThumbnailParameter.cs">
+    <Compile Include="src\io\paramater\PushParamter.cs" />
+    <Compile Include="src\io\paramater\ThumbnailParameter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="json\JsonAdapter.cs">
+    <Compile Include="src\json\JsonAdapter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="json\SimpleJson.cs" />
-    <Compile Include="json\SimpleJsonParser.cs" />
+    <Compile Include="src\json\SimpleJson.cs" />
+    <Compile Include="src\json\SimpleJsonParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="response\BmobResponseParser.cs">
+    <Compile Include="src\response\BmobResponseParser.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Create.cs">
+    <Compile Include="src\response\Create.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Delete.cs">
+    <Compile Include="src\response\Delete.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Empty.cs">
+    <Compile Include="src\response\Empty.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\EndPoint.cs">
+    <Compile Include="src\response\EndPoint.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Query.cs">
+    <Compile Include="src\response\Query.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Status.cs">
+    <Compile Include="src\response\Status.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Update.cs">
+    <Compile Include="src\response\Update.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="response\Upload.cs">
+    <Compile Include="src\response\Upload.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tools\BmobArrays.cs">
+    <Compile Include="src\tools\BmobArrays.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tools\BmobDebug.cs">
+    <Compile Include="src\tools\BmobDebug.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tools\Utilities.cs">
+    <Compile Include="src\tools\Utilities.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

@@ -17,7 +17,7 @@ namespace cn.bmob.io
     //quality：质量，选填, 范围 1-100
     //outType：输出类型，0:默认，输出url；1:输出base64编码的字符串流
     /// </summary>
-    public class ThumbnailParameter : BmobObject, IBmobWritable
+    public sealed class ThumbnailParameter : BmobObject, IBmobWritable
     {
         public ThumbnailParameter(double width, double height, String image)
         {

@@ -11,7 +11,7 @@ namespace cn.bmob.io
     /// <summary>
     /// 可以参考BmobCloud
     /// </summary>
-    public class BmobRemote : BmobObject
+    public sealed class BmobRemote : BmobObject
     {
 
         private class __Bmob : Bmob

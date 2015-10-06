@@ -14,7 +14,7 @@ namespace cn.bmob.io
     /// 
     /// 上限为50个, 这些操作会以发送过去的顺序来执行
     /// </summary>
-    public class BmobBatch : BmobObject
+    public sealed class BmobBatch : BmobObject
     {
 
         private class __Bmob : Bmob
@@ -41,12 +41,13 @@ namespace cn.bmob.io
             var requests = new List<IDictionary>();
             foreach (BmobInteractObject req in BmobWrapper.Requests)
             {
-                String method = req.BatchMethod;
+                String method = req.Method;
                 if (method == null)
                 {
                     continue;
                 }
 
+                // XXX 1.6 根据restful接口优化
                 String path = "";
                 if (method.Equals("POST"))
                 {

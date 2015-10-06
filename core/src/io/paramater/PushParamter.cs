@@ -16,7 +16,7 @@ namespace cn.bmob.io
     ///  * 当启动应用程序中的会话时，通知通道 URI 应该始终发送到其相应的 Web 服务。
     ///  * Web 服务应该拥有一个可以发送到其相应应用程序的状态代码，该代码将触发应用程序创建新的通知通道 URI。
     /// </summary>
-    public class PushParamter : BmobObject
+    public sealed class PushParamter : BmobObject
     {
         private BmobQuery target = new BmobQuery();
         public BmobQuery Target { get { return target; } }

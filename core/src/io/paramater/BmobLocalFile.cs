@@ -12,7 +12,7 @@ namespace cn.bmob.io
     /// 
     /// byte[]优先级最高，流，最后才是判断filename获取本地文件的内容
     /// </summary>
-    public class BmobLocalFile
+    public sealed class BmobLocalFile
     {
         private String filename;
         private byte[] datas;
