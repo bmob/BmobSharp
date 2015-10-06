@@ -32,5 +32,4 @@ Bmob Api Client for .Net
  * 删除原来的`Assets/libs/Bmob-Unity.dll`。
  * 把源代码`core/src`目录拷贝到`Assets/classes/`下。
  * 打开Unity重新编译，把BmobUntiy对象拖拽到摄像机上，重新设置AppId和RestKey。
- * 
  
