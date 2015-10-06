@@ -5,6 +5,7 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using cn.bmob.exception;
 
 namespace cn.bmob.tools
 {
@@ -26,7 +27,7 @@ namespace cn.bmob.tools
         {
             if (obj == null)
             {
-                throw new InvalidDataException(throwMesg);
+                throw new BmobException(throwMesg);
             }
         }
         
