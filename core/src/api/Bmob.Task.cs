@@ -2,7 +2,11 @@
 using cn.bmob.response;
 using System;
 
-#if !Unity && !UNITY_5 && !UNITY_4
+#if UNITY_5 || UNITY_4
+#define Unity
+#endif
+
+#if !Unity
 
 using System.Threading.Tasks;
 using System.Threading;

@@ -11,7 +11,11 @@ using cn.bmob.exception;
 using cn.bmob.response;
 using System.Text.RegularExpressions;
 
-#if Unity || UNITY_5  || UNITY_4
+#if UNITY_5 || UNITY_4
+#define Unity
+#endif
+
+#if Unity
 
 using UnityEngine;
 using System.Collections.ObjectModel;

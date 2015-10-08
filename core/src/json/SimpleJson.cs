@@ -46,6 +46,15 @@
 
 // original json parsing code from http://techblog.procurios.nl/k/618/news/view/14605/14863/How-do-I-write-my-own-parser-for-JSON.html
 
+#if UNITY_5 || UNITY_4
+#define Unity
+#endif
+
+// Unity iphone支持的C#版本为.Net2.0
+#if Unity //UNITY_IPHONE TODO 本来只需要iphone才需要这个 条件定义 的
+#define SIMPLE_JSON_NO_LINQ_EXPRESSION
+#endif
+
 #if NETFX_CORE
 #define SIMPLE_JSON_TYPEINFO
 #endif
