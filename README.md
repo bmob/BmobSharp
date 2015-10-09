@@ -29,11 +29,11 @@ Bmob Api Client for .Net
 * 开发环境说明
 
  * Window10
-   * VS2015
-   * Unity 5.1.0f3
+  * VS2015
+  * Unity 5.1.0f3
  * Mac OS X 10.9
-   * Xcode 5.1
-   * Unity 5.2.1f1
+  * Xcode 5.1
+  * Unity 5.2.1f1
 
 如果仅仅是编译项目，可以不需要安装Unity3d，下载Unity3d的Engine和Editor动态链接库文件就行了。
 
