@@ -27,3 +27,11 @@ Bmob Api Client for .Net
   * BmobTest 提供了基于desktop平台的测试用例，便于接口的调试。
   * 源码中提供了**build.simple.bat**用于一键生成各个平台的dll文件。
   
+* Unity源码调试设置
+
+ * 删除原来的`Assets/libs/Bmob-Unity.dll`。
+ * 把源代码`core/src`目录拷贝到`Assets/classes/`下。
+ * 打开Unity重新编译，把BmobUntiy对象拖拽到摄像机上，重新设置AppId和RestKey。
+ 
+![](https://cloud.githubusercontent.com/assets/667902/10300818/2742146a-6c2e-11e5-8367-b2304abfc2dd.jpg)
+
