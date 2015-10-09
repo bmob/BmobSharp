@@ -33,7 +33,6 @@ Bmob Api Client for .Net
 
 如果仅仅是编译项目，可以不需要安装Unity3d，下载Unity3d的Engine和Editor动态链接库文件就行了。
 
-Unity输出日志位置：<http://docs.unity3d.com/Manual/LogFiles.html>
 
 * 文件结构说明
 
@@ -48,6 +47,8 @@ Unity输出日志位置：<http://docs.unity3d.com/Manual/LogFiles.html>
  * 打开Unity重新编译，把BmobUntiy对象拖拽到摄像机上，重新设置AppId和RestKey。
  
 ![](https://cloud.githubusercontent.com/assets/667902/10300818/2742146a-6c2e-11e5-8367-b2304abfc2dd.jpg)
+
+* Unity输出日志位置：<http://docs.unity3d.com/Manual/LogFiles.html>
 
 * Unity Mac环境配置
 
