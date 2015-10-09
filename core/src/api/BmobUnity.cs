@@ -1,4 +1,8 @@
-﻿using System;
+﻿#if UNITY_5 || UNITY_4
+#define Unity
+#endif
+
+using System;
 using System.Collections.Generic;
 
 using System.Text;
@@ -10,10 +14,6 @@ using cn.bmob.config;
 using cn.bmob.exception;
 using cn.bmob.response;
 using System.Text.RegularExpressions;
-
-#if UNITY_5 || UNITY_4
-#define Unity
-#endif
 
 #if Unity
 

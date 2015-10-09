@@ -1,10 +1,10 @@
-﻿using cn.bmob.io;
-using cn.bmob.response;
-using System;
-
-#if UNITY_5 || UNITY_4
+﻿#if UNITY_5 || UNITY_4
 #define Unity
 #endif
+
+using cn.bmob.io;
+using cn.bmob.response;
+using System;
 
 #if !Unity
 
