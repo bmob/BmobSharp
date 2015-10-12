@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cn.bmob.response;
+using System;
 
 namespace cn.bmob.exception
 {
@@ -7,6 +8,13 @@ namespace cn.bmob.exception
     /// </summary>
     public class BmobException : Exception
     {
+        public Status status { get; private set; }
+
+        public BmobException(Status status) : base(status.ToString())
+        {
+            this.status = status;
+        }
+
         public BmobException(string msg) : base(msg) { }
 
         public BmobException(Exception real) : base(real.Message, real) { }

@@ -12,6 +12,7 @@ using cn.bmob.http;
 using cn.bmob.Extensions;
 using cn.bmob.config;
 using cn.bmob.exception;
+using System.Text.RegularExpressions;
 
 namespace cn.bmob.api
 {
@@ -24,7 +25,7 @@ namespace cn.bmob.api
         {
             Configuration.PLATFORM = SDKTarget.WindowsDesktop;
         }
-        
+
         internal override void submit<T>(BmobCommand<T> command, BmobCallback<T> callback)
         {
             command.execute<int>(Request, callback);
@@ -48,7 +49,8 @@ namespace cn.bmob.api
             // http模块有包括了网络异常的处理
             http.ExecuteAsync((raw, _) =>
             {
-                callback(raw.Content, new Status((int)raw.StatusCode, raw.StatusDescription), raw.ErrorException != null ? new BmobException(raw.ErrorException) : null);
+                var status = new Status((int)raw.StatusCode, raw.StatusDescription);
+                callback(raw.Content, status, raw.ErrorException != null ? new BmobException(raw.ErrorException) : null);
             });
 
             return 0;

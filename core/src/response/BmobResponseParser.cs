@@ -26,7 +26,11 @@ namespace cn.bmob.response
         {
             if (!result.ok())
             {
-                this.exception = new BmobException(result.ToString());
+                // RestAPI 如果不是200，说明返回内容有“错误”，此时解析内容
+                var raw = (IDictionary<String, Object>)JsonAdapter.JSON.ToObject(json);
+                var status = BmobInput.Parse<Status>(raw);
+
+                this.exception = new BmobException(status.code == null ? result : status);
                 this.data = default(T);
             }
             else

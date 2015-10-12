@@ -13,7 +13,8 @@ namespace cn.bmob.response
 
         public Status() { }
 
-        public Status(int code, String message) {
+        public Status(int code, String message)
+        {
             this.code = code;
             this.message = message;
         }
@@ -52,6 +53,10 @@ namespace cn.bmob.response
 
             this.code = input.getInt("code");
             this.message = input.getString("message");
+            if (this.message == null)
+            {
+                this.message = input.getString("error");
+            }
         }
 
         public override void write(BmobOutput output, Boolean all)

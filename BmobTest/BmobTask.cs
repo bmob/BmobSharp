@@ -266,5 +266,35 @@ namespace cn.bmob.api.unit
             Console.WriteLine(result);
         }
 
+        [TestMethod()]
+        public void SignupTest()
+        {
+            BmobUser user = new BmobUser();
+            user.username = "signtwice";
+            user.password = "justpasswd";
+
+            // 1
+            try
+            {
+                var future = Bmob.SignupTaskAsync(user);
+                FinishedCallback(future.Result, null);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            // 2
+            try
+            {
+                var future = Bmob.SignupTaskAsync(user);
+                FinishedCallback(future.Result, null);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
     }
 }
