@@ -259,5 +259,12 @@ namespace cn.bmob.api.unit
             Assert.Fail("should throw exception. but it sees not!");
         }
 
+        [TestMethod()]
+        public void TimeStampTest()
+        {
+            Object result = Bmob.TimestampTaskAsync().Result;
+            Console.WriteLine(result);
+        }
+
     }
 }

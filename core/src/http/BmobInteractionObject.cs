@@ -16,16 +16,16 @@ namespace cn.bmob.http
     /// </summary>
     internal class BmobInteractObject
     {
-        protected Func<BmobInteractObject, String> calcUrl;
+        protected Func<BmobInteractObject, String> calcUrlAction;
 
         public BmobInteractObject(String method) : this(method, null)
         {
         }
 
-        public BmobInteractObject(String method, Func<BmobInteractObject, String> calcUrl)
+        public BmobInteractObject(String method, Func<BmobInteractObject, String> calcUrlAction)
         {
             this.Method = method;
-            this.calcUrl = calcUrl;
+            this.calcUrlAction = calcUrlAction;
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace cn.bmob.http
         public String ObjectId { get; set; }
         public String Table { get; set; }
 
-        public virtual String Url { get { return Utilities.getBaseURL() + calcUrl(this); } }
+        public virtual String Url { get { return Utilities.getBaseURL() + calcUrlAction(this); } }
 
         // TODO 1.6 URL整体优化
         private static String getURLTablePart(String tablename)
@@ -140,12 +140,13 @@ namespace cn.bmob.http
         public static BmobInteractObject Endpoint { get { return new BmobInteractObject("POST", bio => "/functions/" + bio.EndPointName); } }
         public static BmobInteractObject Push { get { return new BmobInteractObject("POST", bio => "/push"); } }
 
+        public static BmobInteractObject Timestamp { get { return new GetInteractObject(bio => "/timestamp"); } }
 
         #region GET
 
         public class GetInteractObject : BmobInteractObject
         {
-            public GetInteractObject(Func<BmobInteractObject, String> calcUrl) : base("GET", calcUrl)
+            public GetInteractObject(Func<BmobInteractObject, String> calcUrlAction) : base("GET", calcUrlAction)
             {
             }
 
@@ -177,7 +178,7 @@ namespace cn.bmob.http
 
                     }
 
-                    var baseUrl = Utilities.getBaseURL() + calcUrl(this);
+                    var baseUrl = Utilities.getBaseURL() + calcUrlAction(this);
                     return querystring.Length > 1 ? baseUrl + "?" + querystring.ToString() : baseUrl;
 
                 }

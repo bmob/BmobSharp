@@ -43,5 +43,7 @@ namespace cn.bmob.api
         
         void Thumbnail(ThumbnailParameter param, BmobCallback<ThumbnailCallbackData> callback);
         void Push(PushParamter param, BmobCallback<EmptyCallbackData> callback);
+
+        void Timestamp(BmobCallback<TimeStampCallbackData> callback);
     }
 }

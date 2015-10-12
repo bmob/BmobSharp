@@ -203,6 +203,7 @@
     <Compile Include="src\response\Status.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\response\TimeStamp.cs" />
     <Compile Include="src\response\Update.cs">
       <SubType>Code</SubType>
     </Compile>

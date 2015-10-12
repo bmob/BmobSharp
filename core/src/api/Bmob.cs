@@ -355,6 +355,17 @@ namespace cn.bmob.api
             submit(bia, callback);
         }
 
+        /// <summary>
+        /// 获取服务器的时间
+        ///
+        /// 获取Bmob云服务器的时间戳
+        /// </summary>
+        /// <param name="callback">结果回调</param>
+        public void Timestamp(BmobCallback<TimeStampCallbackData> callback)
+        {
+            var bia = BmobInteractObject.Timestamp;
+            submit(bia, callback);
+        }
 
     }
 
