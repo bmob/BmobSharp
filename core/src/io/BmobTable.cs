@@ -18,7 +18,7 @@ namespace cn.bmob.io
         public virtual String table { get { return this.GetType().Name; } }
 
         /// <summary>
-        /// 数据的唯一标识。放开设置功能，SDK内部进行转换！
+        /// 数据的唯一标识。放开set功能！
         /// 
         /// TODO 如果设置了objectId则为更新！！！
         /// </summary>

@@ -170,6 +170,48 @@ namespace cn.bmob.api.unit
         }
 
         [TestMethod()]
+        public void RoleTest()
+        {
+            //这里创建四个用户对象指针，分别为老板、人事小张、出纳小谢和自己
+            // just for test
+            BmobPointer<BmobUser> boss = new BmobUser() { objectId = "1" };
+            BmobPointer<BmobUser> hr_zhang = new BmobUser() { objectId = "2" };
+            BmobPointer<BmobUser> hr_luo = new BmobUser() { objectId = "3" };
+            BmobPointer<BmobUser> cashier_xie = new BmobUser() { objectId = "4" };
+            BmobPointer<BmobUser> me = new BmobUser() { objectId = "5" };
+            
+            {
+                //创建HR和Cashier两个用户角色（这里为了举例BmobRole的使用，将这段代码写在这里，正常情况下放在员工管理界面会更合适）
+                BmobRole hr = new BmobRole();
+                hr.name = "HR";
+                var users = new BmobRelation<BmobUser>();
+                users.Add(hr_zhang);
+                users.Add(hr_luo);
+
+                //将hr_zhang和hr_luo归属到hr角色中
+                hr.AddUsers(users);
+
+                //保存到云端角色表中（web端可以查看Role表）
+                var future = Bmob.CreateTaskAsync(hr);
+                FinishedCallback(future.Result, null);
+            }
+            
+            {
+                BmobRole cashier = new BmobRole();
+                cashier.name = "Cashier";
+                var users = new BmobRelation<BmobUser>();
+                users.Add(cashier_xie);
+
+                //将cashier_xie归属到cashier角色中
+                cashier.AddUsers(users);
+
+                //保存到云端角色表中（web端可以查看Role表）
+                var future = Bmob.CreateTaskAsync(cashier);
+                FinishedCallback(future.Result, null);
+            }
+        }
+
+        [TestMethod()]
         public void EndPointTest()
         {
             //var future = Bmob.EndpointTaskAsync<QueryCallbackData<Object>>("second", null);

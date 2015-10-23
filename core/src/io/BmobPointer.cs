@@ -50,6 +50,11 @@ namespace cn.bmob.io
         /// 序列化时优先获取refObjectId的值，refObjectId值为null时才取reference的objectId值。
         /// </summary>
         private string _refObjectId;
+
+        /// <summary>
+        /// use T.objectId instead.
+        /// </summary>
+        [Obsolete]
         public string refObjectId
         {
             get
