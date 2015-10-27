@@ -89,9 +89,7 @@ namespace cn.bmob.api.unit
             }
 
             Console.WriteLine();
-            Console.WriteLine("\n返回结果打印输出(用户可以获取的数据)： " + (
-                (resp is IBmobWritable) ? JsonAdapter.JSON.ToJsonString((IBmobWritable)resp) : JsonAdapter.JSON.ToDebugJsonString(resp)
-                ));
+            Console.WriteLine("\n返回结果打印输出(用户可以获取的数据)： " + JsonAdapter.JSON.ToDebugJsonString(resp) );
             Console.WriteLine("\n返回结果： " + JsonAdapter.JSON.ToDebugJsonString(resp));
             Console.WriteLine("\n返回结果异常信息输出： " + ex);
 

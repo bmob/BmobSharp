@@ -134,6 +134,20 @@ namespace cn.bmob.api.unit
         }
 
         [TestMethod()]
+        public void BQLTest()
+        {
+            var future = Bmob.SqlTaskAsync<GameObject>("select * from " + TABLENAME);
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
+        public void BQLCountTest()
+        {
+            var future = Bmob.SqlTaskAsync<GameObject>("select count(*) from " + TABLENAME);
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
         public void FindByWhereContainedInTest()
         {
             var query = new BmobQuery();
@@ -219,6 +233,18 @@ namespace cn.bmob.api.unit
 
             var future = Bmob.EndpointTaskAsync<Dictionary<string, string>>("first", new BmobKV().Put("a", 11324));
             FinishedCallback(future.Result, null);
+
+            /*
+function onRequest(request, response, modules) {
+    var res =  {"value": "just string..."} ;
+    response.end(JSON.stringify(res));
+}        
+Bmob.Endpoint<Dictionary<string, string>>("testString", new Dictionary<String, Object>(), (resp, ex) =>
+            {
+                BmobDebug.Log(resp);
+            });                                           
+*/
+
         }
 
         [TestMethod()]

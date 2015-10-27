@@ -55,8 +55,6 @@ namespace cn.bmob.io
             base.write(output, all);
 
             output.Put("name", this.name);
-            //output.Put("users", this.users);
-            //output.Put("roles", this.roles);
         }
 
         public override void readFields(BmobInput input)
@@ -64,8 +62,6 @@ namespace cn.bmob.io
             base.readFields(input);
 
             this.name = input.getString("name");
-            //this.users = input.Get<BmobRelation<BmobUser>>("users");
-            //this.roles = input.Get<BmobRelation<BmobRole>>("roles");
         }
 
     }

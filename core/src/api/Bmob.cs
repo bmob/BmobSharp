@@ -32,7 +32,7 @@ namespace cn.bmob.api
         }
 
         internal abstract void submit<T>(BmobCommand<T> command, BmobCallback<T> callback);
-        
+
         internal void submitUploadFile<T>(BmobInteractObject interact, BmobCallback<T> callback)
         {
             interact.AppKey = this.appKey;
@@ -366,7 +366,24 @@ namespace cn.bmob.api
             var bia = BmobInteractObject.Timestamp;
             submit(bia, callback);
         }
+        
+        /// <summary>
+        /// 官方文档： http://docs.bmob.cn/bql/index.html?menukey=otherdoc&key=bql
+        /// </summary>
+        /// <param name="bql">e.g. : select * from Player where name=? limit ?,? order by name' </param>
+        /// <param name="values">必须是JsonAdapter.JSON能正常序列化的对象。 e.g. : ["dennis", 0, 100]</param>
+        public void Sql<T>(string bql, List<Object> values, BmobCallback<QueryCallbackData<T>> callback)
+        {
+            var bia = BmobInteractObject.BQL;
+            var kv = new BmobKV().Put("bql", bql);
+            if (values != null)
+            {
+                kv.Put("values", values);
+            }
+            bia.Data = kv;
 
+            submit(bia, callback);
+        }
     }
 
 }

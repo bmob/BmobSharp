@@ -141,6 +141,7 @@ namespace cn.bmob.http
         public static BmobInteractObject Push { get { return new BmobInteractObject("POST", bio => "/push"); } }
 
         public static BmobInteractObject Timestamp { get { return new GetInteractObject(bio => "/timestamp"); } }
+        public static BmobInteractObject BQL { get { return new GetInteractObject(bio => "/cloudQuery"); } }
 
         #region GET
 

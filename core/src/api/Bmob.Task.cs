@@ -6,12 +6,13 @@ using cn.bmob.io;
 using cn.bmob.response;
 using System;
 
+using cn.bmob.http;
+using System.Collections.Generic;
+
 #if !Unity
 
 using System.Threading.Tasks;
 using System.Threading;
-using cn.bmob.http;
-using System.Collections.Generic;
 
 namespace cn.bmob.api
 {
@@ -183,7 +184,12 @@ namespace cn.bmob.api
         {
             return ExecuteTaskAsync<TimeStampCallbackData>(callback => { Timestamp(callback); }, CancellationToken.None);
         }
-
+        
+        public Task<QueryCallbackData<T>> SqlTaskAsync<T>(string bql, List<Object> values = default(List<Object>))
+        {
+            return ExecuteTaskAsync<QueryCallbackData<T>>(callback => { Sql(bql, values, callback); }, CancellationToken.None);
+        }
+        
         public Task<UpdateCallbackData> UpdateTaskAsync(String tablename, String objectId, IBmobWritable data)
         {
             return ExecuteTaskAsync<UpdateCallbackData>(callback => { Update(tablename, objectId, data, callback); }, CancellationToken.None);
@@ -251,4 +257,5 @@ namespace cn.bmob.api
     }
 
 }
+
 #endif

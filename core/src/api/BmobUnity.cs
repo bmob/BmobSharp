@@ -78,7 +78,16 @@ namespace System
             return stringBuilder.ToString();
         }
     }
+
+    namespace Threading
+    {
+        namespace Tasks
+        {
+        }
+    }
+
 }
+
 
 namespace cn.bmob.api
 {

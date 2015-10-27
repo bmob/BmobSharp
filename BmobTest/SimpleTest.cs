@@ -24,5 +24,16 @@ namespace BmobTest
             Console.WriteLine(ss);
         }
 
+        [TestMethod()]
+        public void BmobIntTest()
+        {
+            // set
+            BmobInt i = new BmobInt(1);
+            BmobInt i2 = 1; // 有隐士转换
+
+            // get
+            int iv = i.Get();
+        }
+
     }
 }

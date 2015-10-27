@@ -45,5 +45,7 @@ namespace cn.bmob.api
         void Push(PushParamter param, BmobCallback<EmptyCallbackData> callback);
 
         void Timestamp(BmobCallback<TimeStampCallbackData> callback);
+        void Sql<T>(string bql, List<Object> values, BmobCallback<QueryCallbackData<T>> callback);
+
     }
 }
