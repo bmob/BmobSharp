@@ -225,7 +225,7 @@ namespace cn.bmob.io
                 IDictionary<String, Object> raw = (IDictionary<String, Object>)data;
 
                 IBmobValue result = (IBmobValue)Activator.CreateInstance(type);
-                result.Set(result);
+                result.Set(raw);
 
                 return result;
             }

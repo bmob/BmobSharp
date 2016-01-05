@@ -85,7 +85,7 @@ namespace cn.bmob.http
 
 
             BmobDebug.T("\r\n\t请求的URL : " + url
-                        + "\r\n\t交互对象: " + JsonAdapter.JSON.ToRawString(receiver)
+                        + "\r\n\t交互对象(以请求的数据为准): " + JsonAdapter.JSON.ToRawString(receiver)
                         + "\r\n\t请求的数据: " + JsonAdapter.JSON.ToJsonString(receiver.Data));
 
             return request.Invoke(url, receiver.Method, contentType, postData, headers, (resp, status, ex) =>

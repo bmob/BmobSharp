@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using System.Collections;
+using cn.bmob.json;
 
 namespace cn.bmob.io
 {
@@ -30,20 +31,29 @@ namespace cn.bmob.io
             {
                 this.acls = (Dictionary<string, Object>)acls;
             }
+            else if (acls is IDictionary<string, Object>)
+            {
+                IDictionary<String, Object> kvs = (IDictionary<string, Object>)acls;
+                foreach (var entry in kvs)
+                {
+                    this.acls.Add(entry.Key, entry.Value);
+                }
+            }
+
         }
 
         /// <summary>
         /// key是objectId（用户表某个用户对应的objectId）或者是 *(表示公共的访问权限)，ACL 的值是 "读和写的权限", 这个JSON对象的key总是权限名, 而这些key的值总是 true
         /// </summary>
-        public BmobACL ReadAccess(String key)
+        public BmobACL ReadAccess(String objectId)
         {
-            BmobOutput.Composite(acls, key, "read", true);
+            BmobOutput.Composite(acls, objectId, "read", true);
             return this;
         }
 
-        public BmobACL WriteAccess(String key)
+        public BmobACL WriteAccess(String objectId)
         {
-            BmobOutput.Composite(acls, key, "write", true);
+            BmobOutput.Composite(acls, objectId, "write", true);
             return this;
         }
 

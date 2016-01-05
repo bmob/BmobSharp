@@ -262,6 +262,40 @@ namespace cn.bmob.api.unit
         }
 
         [TestMethod()]
+        public void ACLAddTest()
+        {
+            var data = new GameObject(TABLENAME);
+            data.arrint = BmobArrays.wrap<int>(1, 2, 3);
+            data.arrstring = BmobArrays.wrap<string>("1", "2", "3");
+
+            data.jo2 = 123;
+
+            // 用于下面的区间查询
+            Random rnd = new Random();
+            data.jo = rnd.Next(-50, 170);
+            data.s = "String";
+
+            BmobACL acl = new BmobACL();
+            acl.WriteAccess("b0eab87db3");
+            acl.ReadAccess("b0eab87db3");
+            data.ACL = acl;
+            
+            var future = Bmob.CreateTaskAsync(data);
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
+        public void ACLQueryTest()
+        {
+            Object result = Bmob.LoginTaskAsync("winse", "winse").Result;
+            Console.WriteLine(BmobUser.CurrentUser);
+            
+            var query = new BmobQuery();
+            var future = Bmob.FindTaskAsync<GameObject>(TABLENAME, query);
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
         public void EndPointTest()
         {
             //var future = Bmob.EndpointTaskAsync<QueryCallbackData<Object>>("second", null);
