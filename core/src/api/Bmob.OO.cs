@@ -25,6 +25,10 @@ namespace cn.bmob.api
 #endif
         }
 
+        public void RequestSmsCode(string mobilePhoneNumber, BmobCallback<RequestSmsCodeCallbackData> callback)
+        {
+            this.RequestSmsCode(mobilePhoneNumber, null, callback);
+        }
 
         public void Endpoint<T>(String eMethod, BmobCallback<EndPointCallbackData<T>> callback)
         {

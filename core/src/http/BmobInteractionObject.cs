@@ -143,6 +143,31 @@ namespace cn.bmob.http
         public static BmobInteractObject Timestamp { get { return new GetInteractObject(bio => "/timestamp"); } }
         public static BmobInteractObject BQL { get { return new GetInteractObject(bio => "/cloudQuery"); } }
 
+        public static BmobInteractObject RequestSMS { get { return new BmobInteractObject("POST", bio => "/requestSmsCode"); } }
+        public static BmobInteractObject VerifySMS
+        {
+            get
+            {
+                return new BmobInteractObject("POST", bio =>
+                {
+                    var data = bio.Data as SMSParamter;
+                    return "/verifySmsCode/" + data.code;
+                });
+            }
+        }
+        public static BmobInteractObject QuerySMS
+        {
+            get
+            {
+                return new GetInteractObject(bio =>
+                {
+                    var data = bio.Data as SMSParamter;
+                    return "/querySms/" + data.smsId;
+                });
+            }
+        }
+
+
         #region GET
 
         public class GetInteractObject : BmobInteractObject

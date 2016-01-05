@@ -33,17 +33,25 @@ namespace cn.bmob.api
 
         internal abstract void submit<T>(BmobCommand<T> command, BmobCallback<T> callback);
 
-        internal void submitUploadFile<T>(BmobInteractObject interact, BmobCallback<T> callback)
+        private void fillInteractObject(BmobInteractObject interact)
         {
             interact.AppKey = this.appKey;
             interact.RestKey = this.restKey;
+            if (interact.SessionToken == null && BmobUser.CurrentUser != null)
+            {
+                interact.SessionToken = BmobUser.CurrentUser.sessionToken;
+            }
+        }
+
+        internal void submitUploadFile<T>(BmobInteractObject interact, BmobCallback<T> callback)
+        {
+            fillInteractObject(interact);
             submit(new BmobFileCommand<T>(interact), callback);
         }
 
         internal void submit<T>(BmobInteractObject interact, BmobCallback<T> callback)
         {
-            interact.AppKey = this.appKey;
-            interact.RestKey = this.restKey;
+            fillInteractObject(interact);
             submit(new BmobCommand<T>(interact), callback);
         }
 
@@ -366,7 +374,7 @@ namespace cn.bmob.api
             var bia = BmobInteractObject.Timestamp;
             submit(bia, callback);
         }
-        
+
         /// <summary>
         /// 官方文档： http://docs.bmob.cn/bql/index.html?menukey=otherdoc&key=bql
         /// </summary>
@@ -380,6 +388,39 @@ namespace cn.bmob.api
             {
                 kv.Put("values", values);
             }
+            bia.Data = kv;
+
+            submit(bia, callback);
+        }
+
+        public void RequestSmsCode(string mobilePhoneNumber, string template, BmobCallback<RequestSmsCodeCallbackData> callback)
+        {
+            var bia = BmobInteractObject.RequestSMS;
+            var kv = new SMSParamter();
+            kv.mobilePhoneNumber = mobilePhoneNumber;
+            kv.template = template;
+
+            bia.Data = kv;
+
+            submit(bia, callback);
+        }
+        public void VerifySmsCode(string mobilePhoneNumber, string code, BmobCallback<VerifySmsCodeCallbackData> callback)
+        {
+            var bia = BmobInteractObject.VerifySMS;
+            var kv = new SMSParamter();
+            kv.mobilePhoneNumber = mobilePhoneNumber;
+            kv.code = code;
+
+            bia.Data = kv;
+
+            submit(bia, callback);
+        }
+        public void QuerySms(String smsId, BmobCallback<QuerySmsCallbackData> callback)
+        {
+            var bia = BmobInteractObject.QuerySMS;
+            var kv = new SMSParamter();
+            kv.smsId = smsId;
+
             bia.Data = kv;
 
             submit(bia, callback);

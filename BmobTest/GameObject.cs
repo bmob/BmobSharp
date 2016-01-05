@@ -36,6 +36,8 @@ namespace cn.bmob.api.unit
         public BmobInt obj { get; set; }
         public string s { get; set; }
 
+        public BmobPointer<BmobUser> user { get; set; }
+
         public override void readFields(BmobInput input)
         {
             base.readFields(input);
@@ -46,6 +48,9 @@ namespace cn.bmob.api.unit
             this.jo2 = input.getInt("jo2");
             this.obj = input.getInt("obj");
             this.s = input.getString("s");
+
+
+            this.user  = input.Get<BmobPointer<BmobUser>>("user");
         }
 
         public override void write(BmobOutput output, Boolean all)
@@ -59,6 +64,8 @@ namespace cn.bmob.api.unit
             output.Put("jo2", this.jo2);
             output.Put("obj", this.obj);
             output.Put("s", this.s);
+
+            output.Put("user", this.user);
         }
     }
 }

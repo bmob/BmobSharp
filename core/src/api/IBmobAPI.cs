@@ -47,5 +47,8 @@ namespace cn.bmob.api
         void Timestamp(BmobCallback<TimeStampCallbackData> callback);
         void Sql<T>(string bql, List<Object> values, BmobCallback<QueryCallbackData<T>> callback);
 
+        void RequestSmsCode(string mobilePhoneNumber, string template, BmobCallback<RequestSmsCodeCallbackData> callback);
+        void VerifySmsCode(string mobilePhoneNumber, string smsId, BmobCallback<VerifySmsCodeCallbackData> callback);
+        void QuerySms(String smsId, BmobCallback<QuerySmsCallbackData> callback);
     }
 }

@@ -53,7 +53,7 @@ namespace cn.bmob.api
     /// </summary>
     public partial class Bmob
     {
-#region GenTaskAsyncCode
+        #region GenTaskAsyncCode
 
         // / @see TEST#GenCode
 
@@ -152,7 +152,7 @@ namespace cn.bmob.api
         {
             return ExecuteTaskAsync<BmobUser>(callback => { Login(username, pwd, callback); }, CancellationToken.None);
         }
-        
+
 
         public Task<EmptyCallbackData> PushTaskAsync(PushParamter param)
         {
@@ -163,7 +163,7 @@ namespace cn.bmob.api
         {
             return ExecuteTaskAsync<EmptyCallbackData>(callback => { Reset(email, callback); }, CancellationToken.None);
         }
-        
+
 
         public Task<T> SignupTaskAsync<T>(T user) where T : cn.bmob.io.BmobUser
         {
@@ -184,12 +184,12 @@ namespace cn.bmob.api
         {
             return ExecuteTaskAsync<TimeStampCallbackData>(callback => { Timestamp(callback); }, CancellationToken.None);
         }
-        
+
         public Task<QueryCallbackData<T>> SqlTaskAsync<T>(string bql, List<Object> values = default(List<Object>))
         {
             return ExecuteTaskAsync<QueryCallbackData<T>>(callback => { Sql(bql, values, callback); }, CancellationToken.None);
         }
-        
+
         public Task<UpdateCallbackData> UpdateTaskAsync(String tablename, String objectId, IBmobWritable data)
         {
             return ExecuteTaskAsync<UpdateCallbackData>(callback => { Update(tablename, objectId, data, callback); }, CancellationToken.None);
@@ -210,8 +210,24 @@ namespace cn.bmob.api
             return ExecuteTaskAsync<UpdateCallbackData>(callback => { UpdateUser(data, callback); }, CancellationToken.None);
         }
 
+        public Task<RequestSmsCodeCallbackData> RequestSmsCodeTaskAsync(string mobilePhoneNumber)
+        {
+            return ExecuteTaskAsync<RequestSmsCodeCallbackData>(callback => { RequestSmsCode(mobilePhoneNumber, callback); }, CancellationToken.None);
+        }
+        public Task<RequestSmsCodeCallbackData> RequestSmsCodeTaskAsync(string mobilePhoneNumber, string template)
+        {
+            return ExecuteTaskAsync<RequestSmsCodeCallbackData>(callback => { RequestSmsCode(mobilePhoneNumber, template, callback); }, CancellationToken.None);
+        }
+        public Task<VerifySmsCodeCallbackData> VerifySmsCodeTaskAsync(string mobilePhoneNumber, string code)
+        {
+            return ExecuteTaskAsync<VerifySmsCodeCallbackData>(callback => { VerifySmsCode(mobilePhoneNumber, code, callback); }, CancellationToken.None);
+        }
+        public Task<QuerySmsCallbackData> QuerySmsTaskAsync(String smsId)
+        {
+            return ExecuteTaskAsync<QuerySmsCallbackData>(callback => { QuerySms(smsId, callback); }, CancellationToken.None);
+        }
 
-#endregion
+        #endregion
 
         private Task<TResult> ExecuteTaskAsync<TResult>(Action<BmobCallback<TResult>> request, CancellationToken token)
         {

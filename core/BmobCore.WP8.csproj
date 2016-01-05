@@ -217,6 +217,7 @@
     <Compile Include="src\io\paramater\BmobLocalFile.cs">
       <SubType>Code</SubType>
     </Compile>
+	<Compile Include="src\io\paramater\SMSParamter.cs" />
     <Compile Include="src\io\paramater\PushParamter.cs" />
     <Compile Include="src\io\paramater\ThumbnailParameter.cs">
       <SubType>Code</SubType>
@@ -249,6 +250,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\response\TimeStamp.cs" />
+	<Compile Include="src\response\SMS.cs" />
     <Compile Include="src\response\Update.cs">
       <SubType>Code</SubType>
     </Compile>

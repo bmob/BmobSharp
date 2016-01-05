@@ -95,6 +95,9 @@ namespace cn.bmob.api.unit
             data.jo = rnd.Next(-100, 100);
             data.s = "String+String";
 
+            data.user = new BmobUser();
+            data.user.refObjectId = "b0eab87db3";
+
             action(data);
 
         }
@@ -105,9 +108,10 @@ namespace cn.bmob.api.unit
             var updateData = new GameObject();
             updateData.jo = 12341234;
 
-            var future = Bmob.UpdateTaskAsync(TABLENAME, LatestObjectId, updateData);
+            var future = Bmob.UpdateTaskAsync(TABLENAME, "4ff5c1a6c5", updateData);
             FinishedCallback(future.Result, null);
         }
+
 
         [TestMethod()]
         public void GetTest()
@@ -148,6 +152,27 @@ namespace cn.bmob.api.unit
         }
 
         [TestMethod()]
+        public void RequestSMSTest()
+        {
+            var future = Bmob.RequestSmsCodeTaskAsync("XXX");
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
+        public void QuerySMSTest()
+        {
+            var future = Bmob.QuerySmsTaskAsync("6763830");
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
+        public void VerifySmsCodeTest()
+        {
+            var future = Bmob.VerifySmsCodeTaskAsync("XXX", "120852");
+            FinishedCallback(future.Result, null);
+        }
+
+        [TestMethod()]
         public void FindByWhereContainedInTest()
         {
             var query = new BmobQuery();
@@ -155,6 +180,17 @@ namespace cn.bmob.api.unit
             var future = Bmob.FindTaskAsync<GameObject>(TABLENAME, query);
             FinishedCallback(future.Result, null);
         }
+
+        [TestMethod()]
+        public void FindWithPointerInTest()
+        {
+            var query = new BmobQuery();
+            query.WhereEqualTo("objectId", "33f58cdcc6");
+            query.Include("user");
+            var future = Bmob.FindTaskAsync<GameObject>(TABLENAME, query);
+            FinishedCallback(future.Result, null);
+        }
+
 
         [TestMethod()]
         public void FindByWhereCountByCreatedAtTest()
@@ -254,6 +290,17 @@ Bmob.Endpoint<Dictionary<string, string>>("testString", new Dictionary<String, O
             Console.WriteLine(BmobUser.CurrentUser);
         }
 
+
+        [TestMethod()]
+        public void UpdateUserTest()
+        {
+            var updateData = new BmobUser();
+            updateData.email = "1234@qq.com";
+
+            var future = Bmob.UpdateUserTaskAsync("b0eab87db3", updateData, "58837ed540b2849680523e99b963501b");
+            FinishedCallback(future.Result, null);
+        }
+
         [TestMethod()]
         public void BatchTest()
         {
@@ -296,12 +343,12 @@ Bmob.Endpoint<Dictionary<string, string>>("testString", new Dictionary<String, O
         public void FileUploadTest()
         {
             Byte[] data = null;
-            using (var stream = File.OpenRead("R:/1.png"))
+            using (var stream = File.OpenRead("D:/nagios-yn-bin.tar.gz"))
             {
                 data = stream.ReadAsBytes();
             }
 
-            var future = Bmob.FileUploadTaskAsync(new BmobLocalFile(data, "21.png"));
+            var future = Bmob.FileUploadTaskAsync(new BmobLocalFile(data, "21.tar.gz"));
             FinishedCallback(future.Result, null);
         }
 
