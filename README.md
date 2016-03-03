@@ -49,15 +49,14 @@ Bmob Api Client for .Net
  * 删除原来的`Assets/libs/Bmob-Unity.dll`。
  * 把源代码`core/src`目录拷贝到`Assets/classes/`下。
  * 打开Unity重新编译，把BmobUntiy对象拖拽到摄像机上，重新设置AppId和RestKey。
- 
-![](https://cloud.githubusercontent.com/assets/667902/10300818/2742146a-6c2e-11e5-8367-b2304abfc2dd.jpg)
+ ![](https://cloud.githubusercontent.com/assets/667902/10300818/2742146a-6c2e-11e5-8367-b2304abfc2dd.jpg)
 
 * Unity输出日志位置：<http://docs.unity3d.com/Manual/LogFiles.html>
 
 * Unity Mac环境配置
 
-![](https://raw.githubusercontent.com/bmob/bmob-demo-csharp/master/images/unity-ios-simulator.png)
-
-![](https://cloud.githubusercontent.com/assets/667902/10384088/a2ff6304-6e69-11e5-8f2e-3221e8ac7851.png)
-
-![](https://cloud.githubusercontent.com/assets/667902/10384074/637611a6-6e69-11e5-9406-a68414742547.png)
+ ![](https://raw.githubusercontent.com/bmob/bmob-demo-csharp/master/images/unity-ios-simulator.png)
+ 
+ ![](https://cloud.githubusercontent.com/assets/667902/10384088/a2ff6304-6e69-11e5-8f2e-3221e8ac7851.png)
+ 
+ ![](https://cloud.githubusercontent.com/assets/667902/10384074/637611a6-6e69-11e5-9406-a68414742547.png)
