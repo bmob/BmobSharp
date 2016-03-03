@@ -1,4 +1,4 @@
-﻿#if UNITY_5 || UNITY_4
+﻿#if UNITY_5 || UNITY_4 || UNITY_4_6 
 #define Unity
 #endif
 

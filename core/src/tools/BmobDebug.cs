@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cn.bmob.config;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -36,10 +37,17 @@ namespace cn.bmob.tools
         /// 注册打印日志的实现方法
         /// </summary>
         /// <param name="l">打印日志的输出方法</param>
+        public static void Register(Action<Object> l, Level level)
+        {
+            BmobDebug.level = level;
+            logger = l;
+
+            BmobDebug.I("bmob version " + Configuration.BUILD_VERSION + "/" + Configuration.PLATFORM);
+        }
+
         public static void Register(Action<Object> l)
         {
-            logger = l;
-            level = Level.DEBUG;
+            Register(l, Level.DEBUG);
         }
 
         public static Boolean Debug

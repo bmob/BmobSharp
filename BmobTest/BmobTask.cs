@@ -82,6 +82,7 @@ namespace cn.bmob.api.unit
             );
         }
 
+
         private void Create(Action<BmobTable> action)
         {
             var data = new GameObject(TABLENAME);
@@ -100,6 +101,63 @@ namespace cn.bmob.api.unit
 
             action(data);
 
+        }
+
+        [TestMethod()]
+        public void BmobPointerTest()
+        {
+            var uf = Bmob.LoginTaskAsync<GameUser>("1", "2");
+            GameUser user = uf.Result;
+
+            user.user = new UserExt();
+            user.user.refObjectId = "LOWbCCCK1";
+
+            var future = Bmob.UpdateTaskAsync(user);
+            FinishedCallback(future.Result, null);
+
+        }
+
+        public class UserExt : BmobTable
+        {
+            public string level { get; set; }
+            public override void write(BmobOutput output, bool all)
+            {
+                base.write(output, all);
+
+                output.Put("level", this.level);
+            }
+
+            public override void readFields(BmobInput input)
+            {
+                base.readFields(input);
+
+                this.level = input.getString("level");
+            }
+        }
+
+        public class GameUser : BmobUser
+        {
+            public string username { get; set; }
+            public string password { get; set; }
+            public BmobPointer<UserExt> user { get; set; }
+
+            public override void write(BmobOutput output, bool all)
+            {
+                base.write(output, all);
+
+                output.Put("username", this.username);
+                output.Put("password", this.password);
+                output.Put("user", this.user);
+            }
+
+            public override void readFields(BmobInput input)
+            {
+                base.readFields(input);
+
+                this.username = input.getString("username");
+                this.password = input.getString("password");
+                this.user = input.Get<BmobPointer<UserExt>>("user");
+            }
         }
 
         [TestMethod()]

@@ -15,8 +15,9 @@ if not "%errorlevel%"=="0" goto failure
 %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe core/BmobCore.Win8_1.csproj /p:Configuration=%config% /m /v:M /fl /flp:LogFile=msbuild.Win8_1.log;Verbosity=Normal /nr:true /p:BuildInParallel=true /p:RestorePackages=true /t:Clean,Rebuild
 if not "%errorlevel%"=="0" goto failure
 
-%WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe core/BmobCore.WP8.csproj /p:Configuration=%config% /m /v:M /fl /flp:LogFile=msbuild.WP8.log;Verbosity=Normal /nr:true /p:BuildInParallel=true /p:RestorePackages=true /t:Clean,Rebuild
-if not "%errorlevel%"=="0" goto failure
+REM 没有安装wp8 SDK了
+REM %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe core/BmobCore.WP8.csproj /p:Configuration=%config% /m /v:M /fl /flp:LogFile=msbuild.WP8.log;Verbosity=Normal /nr:true /p:BuildInParallel=true /p:RestorePackages=true /t:Clean,Rebuild
+REM if not "%errorlevel%"=="0" goto failure
 
 REM delete the old stuff
 
