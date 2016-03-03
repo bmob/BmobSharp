@@ -2,6 +2,10 @@
 
 Bmob Api Client for .Net
 
+## Bmob C# SDK下载地址：
+
+<https://github.com/bmob/BmobSharp/releases>
+
 ## 支持平台
 
 * Windows Deskstop 即.Net C#的项目
