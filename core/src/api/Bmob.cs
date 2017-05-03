@@ -33,6 +33,7 @@ namespace cn.bmob.api
 
         internal abstract void submit<T>(BmobCommand<T> command, BmobCallback<T> callback);
 
+        // 设置bmobInteractObject内的appKey和restKey，设置SessionToken
         private void fillInteractObject(BmobInteractObject interact)
         {
             interact.AppKey = this.appKey;
@@ -318,8 +319,8 @@ namespace cn.bmob.api
         /// <param name="callback">上传文件的结果回调，返回BmobFile对象</param>
         public void FileUpload(BmobLocalFile file, BmobCallback<UploadCallbackData> callback)
         {
-            var bia = BmobInteractObject.Files;
-            bia.Data = file;
+            var bia = BmobInteractObject.Files; // 返回 BMOBInteractObject对象 
+            bia.Data = file; // 请求数据，相当于curl的-d参数的值
             bia.Table = "BMOB";
 
             submitUploadFile(bia, callback);
@@ -328,7 +329,7 @@ namespace cn.bmob.api
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="url">如：M02/C2/95/oYYBAFYDuR6AD3AbAAAUWOcV3Ew650.png</param>
+        /// <param name="cdn+'/'+url">如：upyun/2017/05/02/32788892401f4cbf80c141a3a1c8dca9.png</param>
         /// <param name="callback"></param>
         public void FileDelete(String url, BmobCallback<EmptyCallbackData> callback)
         {

@@ -5,6 +5,7 @@ using cn.bmob.io;
 using System.Collections;
 using cn.bmob.exception;
 using cn.bmob.Extensions;
+using cn.bmob.tools;
 
 namespace cn.bmob.response
 {
@@ -24,6 +25,7 @@ namespace cn.bmob.response
 
         public virtual void parse(String json)
         {
+
             if (!result.ok())
             {
                 // RestAPI 如果不是200，说明返回内容有“错误”，此时解析内容
@@ -46,7 +48,6 @@ namespace cn.bmob.response
                 {
                     // 解析[CRUD]的返回值对象
                     var raw = (IDictionary<String, Object>)JsonAdapter.JSON.ToObject(json);
-
                     this.data = BmobInput.Parse<T>(raw);
                 }
             }

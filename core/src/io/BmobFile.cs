@@ -28,6 +28,11 @@ namespace cn.bmob.io
         public string group { get; set; }
 
         /// <summary>
+        /// 文件的cdn名
+        /// </summary>
+        public string cdn { get; set; }
+
+        /// <summary>
         /// 相对于Bmob文件服务器的位置，结果需要附加上http://file.codenow.cn
         /// </summary>
         public string url { get; set; }
@@ -52,6 +57,7 @@ namespace cn.bmob.io
         public override void readFields(BmobInput input)
         {
             base.readFields(input);
+            this.cdn = input.getString("cdn");
             this.filename = input.getString("filename");
             this.group = input.getString("group");
             this.url = input.getString("url");
@@ -61,6 +67,7 @@ namespace cn.bmob.io
         {
             base.write(output, all);
             output.Put(TYPE_NAME, this._type);
+            output.Put("cdn",this.cdn);
             output.Put("filename", this.filename);
             output.Put("group", this.group);
             output.Put("url", this.url);

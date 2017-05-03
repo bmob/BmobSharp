@@ -31,6 +31,11 @@ namespace cn.bmob.tools
             }
         }
         
+        public static String getNewBaseURL()
+        {
+            return Configuration.NEW_OUTER_NET;
+        }
+
         public static String getBaseURL()
         {
             return Configuration.OUTER_NET;

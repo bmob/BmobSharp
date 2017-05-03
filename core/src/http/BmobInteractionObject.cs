@@ -109,7 +109,7 @@ namespace cn.bmob.http
         {
             get
             {
-                return new BmobInteractObject(
+                return new NewBmobInteractObject(
                     "POST",
                     bio =>
                     {
@@ -123,7 +123,7 @@ namespace cn.bmob.http
         {
             get
             {
-                return new BmobInteractObject(
+                return new NewBmobInteractObject(
                     "DELETE ",
                     bio =>
                     {
@@ -169,7 +169,6 @@ namespace cn.bmob.http
 
 
         #region GET
-
         public class GetInteractObject : BmobInteractObject
         {
             public GetInteractObject(Func<BmobInteractObject, String> calcUrlAction) : base("GET", calcUrlAction)
@@ -211,9 +210,22 @@ namespace cn.bmob.http
             }
 
         }
-
         #endregion
 
-    }
+        public class NewBmobInteractObject : BmobInteractObject{
 
+            public NewBmobInteractObject(String method, Func<BmobInteractObject, String> calcUrlAction) : base(method, calcUrlAction)
+            {
+            }
+
+            public override String Url 
+            { 
+                get 
+                { 
+                    return (Utilities.getNewBaseURL() + calcUrlAction(this)); 
+                } 
+            }
+        }
+        
+    }
 }

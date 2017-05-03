@@ -32,9 +32,14 @@ namespace cn.bmob.config
         /// </summary>
         internal const String VERSION = "1";
 
+        internal const String VERSION_NEW = "2";
+
+
         internal const String FILE_NET = "http://file.bmob.cn/";
         
         internal const String OUTER_NET = "https://api.bmob.cn/" + VERSION;
+
+        internal const String NEW_OUTER_NET = "https://api.bmob.cn/" + VERSION_NEW;
 
         public const String CHARSET = "UTF-8";
         internal const String JSON_CONTENT_TYPE = "application/json; charset=" + CHARSET;

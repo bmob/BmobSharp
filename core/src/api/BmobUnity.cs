@@ -113,7 +113,6 @@ namespace cn.bmob.api
         {
             Configuration.PLATFORM = SDKTarget.Unity;
             go = this;
-
         }
 
         /// <summary>

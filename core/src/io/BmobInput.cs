@@ -210,6 +210,7 @@ namespace cn.bmob.io
                 return new BmobBoolean(toBoolean(data));
             }
 
+
             // 复杂类型
             if (typeof(IBmobWritable).IsAssignableFrom(type))
             {
@@ -222,6 +223,7 @@ namespace cn.bmob.io
             }
             else if (typeof(IBmobValue).IsAssignableFrom(type))
             {
+
                 IDictionary<String, Object> raw = (IDictionary<String, Object>)data;
 
                 IBmobValue result = (IBmobValue)Activator.CreateInstance(type);
