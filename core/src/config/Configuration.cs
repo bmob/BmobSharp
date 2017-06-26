@@ -32,13 +32,18 @@ namespace cn.bmob.config
         /// </summary>
         internal const String VERSION = "1";
 
+        /// <summary>
+        /// 请求Bmob后端'文件'接口版本号
+        /// </summary>
         internal const String VERSION_NEW = "2";
-
 
         internal const String FILE_NET = "http://file.bmob.cn/";
         
         internal const String OUTER_NET = "https://api.bmob.cn/" + VERSION;
 
+        /// <summary>
+        /// 请求Bmob后端'文件'接口url前缀
+        /// </summary>
         internal const String NEW_OUTER_NET = "https://api.bmob.cn/" + VERSION_NEW;
 
         public const String CHARSET = "UTF-8";
