@@ -1,4 +1,4 @@
-﻿#if UNITY_5 || UNITY_4 || UNITY_4_6 
+﻿#if UNITY_5 || UNITY_4 || UNITY_4_6 || UNITY_2017 
 #define Unity
 #endif
 
@@ -186,12 +186,32 @@ namespace cn.bmob.api
 
 
             var status = new Status(200, error);
-            if (www.responseHeaders.ContainsKey("STATUS"))
-            {
-                var respStatus = www.responseHeaders["STATUS"];
-                var statusCode = Regex.Replace(respStatus, @"[^ ]* (\d*) .*", "$1");
-                status.code = Convert.ToInt32(statusCode);
+            
+            // if (www.responseHeaders.ContainsKey("STATUS"))
+            // {
+            //     var respStatus = www.responseHeaders["STATUS"];
+            //     var statusCode = Regex.Replace(respStatus, @"[^ ]* (\d*) .*", "$1");
+            //     status.code = Convert.ToInt32(statusCode);
+            // }
+            try{
+                if (www.responseHeaders.ContainsKey("STATUS"))
+                {
+                    var respStatus = www.responseHeaders["STATUS"];
+                    var statusCode = Regex.Replace(respStatus, @"[^ ]* (\d*) .*", "$1");
+                    status.code = Convert.ToInt32(statusCode);
+                }
+            }catch(Exception e){
+                 BmobDebug.T("www.responseHeaders方法有问题");
+                 // Unity 2017.2.0f3 (64-bit) 版本，www.responseHeaders方法在真机上有问题。zq，2017.10.24
+                if(error != null){
+                    foreach (Match match in Regex.Matches(error, @" *(\d*) *")){
+                        status.code = Convert.ToInt32(match.Value);
+                        break;
+                    }
+                }
             }
+
+
             if (error != null && error != "")
             {
                 // 返回了错误的内容，不表示返回的内容就为空！！
