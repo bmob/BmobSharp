@@ -200,8 +200,8 @@ namespace cn.bmob.api
                     var statusCode = Regex.Replace(respStatus, @"[^ ]* (\d*) .*", "$1");
                     status.code = Convert.ToInt32(statusCode);
                 }
-            }catch(Exception e){
-                 BmobDebug.T("www.responseHeaders方法有问题");
+            }catch(NullReferenceException e){
+                 BmobDebug.T("www.responseHeaders方法有问题: "+e);
                  // Unity 2017.2.0f3 (64-bit) 版本，www.responseHeaders方法在真机上有问题。zq，2017.10.24
                 if(error != null){
                     foreach (Match match in Regex.Matches(error, @" *(\d*) *")){
