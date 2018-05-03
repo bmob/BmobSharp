@@ -60,3 +60,16 @@ Bmob Api Client for .Net
  ![](https://cloud.githubusercontent.com/assets/667902/10384088/a2ff6304-6e69-11e5-8f2e-3221e8ac7851.png)
  
  ![](https://cloud.githubusercontent.com/assets/667902/10384074/637611a6-6e69-11e5-9406-a68414742547.png)
+
+## 注意事项
+
+* 文件/图片无法上传的问题
+
+  * 直接使用源码，不要用dll文件
+  * 也可以在原来源码基础上，修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件为最新版
+
+
+* Bmob Vip域名加速服务
+
+  * 修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件，将几处 `api.bmob.cn` 修改为 `api-vip.bmob.cn`
+
