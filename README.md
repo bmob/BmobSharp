@@ -63,13 +63,13 @@ Bmob Api Client for .Net
 
 ## 注意事项
 
-* 文件/图片无法上传的问题
+### 文件/图片无法上传的问题
 
 - 直接使用源码，不要用dll文件  
 - 也可以在原来源码基础上，修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件为最新版
 
 
-* Bmob Vip域名加速服务
+### Bmob Vip域名加速服务
 
 - 修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件，将几处 `api.bmob.cn` 修改为 `api-vip.bmob.cn`
 
