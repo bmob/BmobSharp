@@ -1,4 +1,4 @@
-﻿#if UNITY_5 || UNITY_4 || UNITY_4_6 || UNITY_2017
+﻿#if UNITY_5 || UNITY_4 || UNITY_4_6 || UNITY_2017 || UNITY_2018
 #define Unity
 #endif
 
