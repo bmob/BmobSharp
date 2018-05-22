@@ -46,12 +46,12 @@
 
 // original json parsing code from http://techblog.procurios.nl/k/618/news/view/14605/14863/How-do-I-write-my-own-parser-for-JSON.html
 
-#if UNITY_5 || UNITY_4
+#if UNITY_5 || UNITY_4 || UNITY_4_6 || UNITY_2017 || UNITY_2018
 #define Unity
 #endif
 
-// Unity iphoneÖ§³ÖµÄC#°æ±¾Îª.Net2.0
-#if Unity //UNITY_IPHONE TODO ±¾À´Ö»ĞèÒªiphone²ÅĞèÒªÕâ¸ö Ìõ¼ş¶¨Òå µÄ
+// Unity iphoneæ”¯æŒçš„C#ç‰ˆæœ¬ä¸º.Net2.0
+#if Unity //UNITY_IPHONE TODO æœ¬æ¥åªéœ€è¦iphoneæ‰éœ€è¦è¿™ä¸ª æ¡ä»¶å®šä¹‰ çš„
 #define SIMPLE_JSON_NO_LINQ_EXPRESSION
 #endif
 
