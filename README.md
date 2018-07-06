@@ -73,3 +73,6 @@ Bmob Api Client for .Net
 
 - 修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件，将几处 `api.bmob.cn` 修改为 `api-vip.bmob.cn`
 
+### 兼容Unity2017、2018的问题
+
+- 直接使用源码，不要用dll文件  
