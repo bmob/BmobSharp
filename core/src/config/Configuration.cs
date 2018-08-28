@@ -39,12 +39,12 @@ namespace cn.bmob.config
 
         internal const String FILE_NET = "http://file.bmob.cn/";
         
-        internal const String OUTER_NET = "https://api.bmob.cn/" + VERSION;
+        internal const String OUTER_NET = "https://api2.bmob.cn/" + VERSION;
 
         /// <summary>
         /// 请求Bmob后端'文件'接口url前缀
         /// </summary>
-        internal const String NEW_OUTER_NET = "https://api.bmob.cn/" + VERSION_NEW;
+        internal const String NEW_OUTER_NET = "https://api2.bmob.cn/" + VERSION_NEW;
 
         public const String CHARSET = "UTF-8";
         internal const String JSON_CONTENT_TYPE = "application/json; charset=" + CHARSET;
