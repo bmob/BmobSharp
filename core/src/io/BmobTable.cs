@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -7,7 +7,7 @@ namespace cn.bmob.io
     /// <summary>
     /// 数据表操作类
     /// </summary>
-    public class BmobTable : BmobObject, IBmobOperator
+    public class BmobTable : BmobObject, IBmobOperator, IEquatable<BmobTable>
     {
 
         public sealed override string _type { get { return this.table; } }
@@ -166,6 +166,11 @@ namespace cn.bmob.io
                 output.Put("updatedAt", this.updatedAt);
             }
         }
-
+        
+        public bool Equals (BmobTable other)
+        {
+            return objectId == other.objectId;
+        }
+        
     }
 }
