@@ -83,6 +83,17 @@ namespace cn.bmob.api
         }
 
         /// <summary>
+        /// 修改域名
+        /// 
+        /// 修改Bmob云数据库中的域名
+        /// </summary>
+        /// <param name="url">新的域名</param>
+        public void resetDomain(String url)
+        {
+            Configuration.Url = url;
+        }
+
+        /// <summary>
         /// 更新Bmob云数据库中的某一条记录信息
         /// </summary>
         /// <param name="tablename">数据表名称</param>

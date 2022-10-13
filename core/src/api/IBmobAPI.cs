@@ -13,6 +13,7 @@ namespace cn.bmob.api
     {
 
         void initialize(string appKey, String restKey);
+        void resetDomain(String url);
 
         // /
 

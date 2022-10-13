@@ -37,14 +37,26 @@ namespace cn.bmob.config
         /// </summary>
         internal const String VERSION_NEW = "2";
 
-        internal const String FILE_NET = "http://file.bmob.cn/";
+        //public String FILE_NET = "https://api.codenow.cn/" + VERSION_NEW;
         
-        internal const String OUTER_NET = "https://api2.bmob.cn/" + VERSION;
+        internal static String OUTER_NET = "https://api.codenow.cn/" + VERSION;
 
         /// <summary>
         /// 请求Bmob后端'文件'接口url前缀
         /// </summary>
-        internal const String NEW_OUTER_NET = "https://api2.bmob.cn/" + VERSION_NEW;
+        internal static String NEW_OUTER_NET = "https://api.codenow.cn/" + VERSION_NEW;
+
+        public static String Url
+        {
+            get
+            {
+                return this.NEW_OUTER_NET;
+            }
+            set
+            {
+                this.NEW_OUTER_NET=value;
+            }
+        }
 
         public const String CHARSET = "UTF-8";
         internal const String JSON_CONTENT_TYPE = "application/json; charset=" + CHARSET;
@@ -53,6 +65,7 @@ namespace cn.bmob.config
         internal static int REQUEST_TIMEOUT = 10 * 1000;
 
     }
+
 
     public enum SDKTarget
     {

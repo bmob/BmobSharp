@@ -20,7 +20,6 @@ public class HelloBmob : MonoBehaviour
 		void Start ()
 		{
         // Bmob.initialize("4414150cb439afdf684d37dc184e0f9f", "e1deb317442129c125b228ddf78e5f22");
-
 				BmobDebug.Register (print);
 				BmobDebug.level = BmobDebug.Level.TRACE;
 				Bmob = gameObject.GetComponent<BmobUnity> ();// 获得BmobUnity对象

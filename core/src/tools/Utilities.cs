@@ -33,12 +33,12 @@ namespace cn.bmob.tools
         
         public static String getNewBaseURL()
         {
-            return Configuration.NEW_OUTER_NET;
+            return Configuration.Url;
         }
 
         public static String getBaseURL()
         {
-            return Configuration.OUTER_NET;
+            return Configuration.Url;
         }
 
         public static bool Empty(object obj)

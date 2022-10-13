@@ -71,7 +71,7 @@ Bmob Api Client for .Net
 
 ### Bmob Vip域名加速服务
 
-- 修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件，将几处 `api.bmob.cn` 修改为 `api-vip.bmob.cn`
+- 修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件
 
 ### 兼容Unity2017、2018的问题
 
