@@ -73,6 +73,10 @@ Bmob Api Client for .Net
 
 - 修改[Configuration.cs](`https://github.com/bmob/BmobSharp/blob/master/core/src/config/Configuration.cs`) 文件
 
+### Bmob Vip域名加速服务
+
+2022年支持重置域名，Bmob.resetDomain("http://api.xxx.com");   初始化前修改未自己备案api域名。
+
 ### 兼容Unity2017、2018的问题
 
 - 直接使用源码，不要用dll文件  
