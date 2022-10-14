@@ -88,9 +88,17 @@ namespace cn.bmob.api
         /// 修改Bmob云数据库中的域名
         /// </summary>
         /// <param name="url">新的域名</param>
-        public void resetDomain(String url)
+        public void resetDomain(string url)
         {
-            Configuration.Url = url;
+            if(url.EndsWith("/")){
+                Configuration.DATA_URL = url+"1";
+                Configuration.FILE_URL = url+"2";
+            }
+            else{
+                Configuration.DATA_URL = url+"/1";
+                Configuration.FILE_URL = url+"/2";
+            }
+            
         }
 
         /// <summary>

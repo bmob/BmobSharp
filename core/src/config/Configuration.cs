@@ -27,10 +27,14 @@ namespace cn.bmob.config
 
         internal static string CLIENT_REQ_UID = Guid.NewGuid().ToString().Replace("-", "");
 
+        internal static string DATA_URL = "https://api.codenow.cn/1";
+
+        internal static string FILE_URL ="https://api.codenow.cn/2";
+
         /// <summary>
         /// 请求Bmob后端接口版本号
         /// </summary>
-        internal const String VERSION = "1";
+        /*internal const String VERSION = "1";
 
         /// <summary>
         /// 请求Bmob后端'文件'接口版本号
@@ -56,7 +60,7 @@ namespace cn.bmob.config
             {
                 this.NEW_OUTER_NET=value;
             }
-        }
+        }*/
 
         public const String CHARSET = "UTF-8";
         internal const String JSON_CONTENT_TYPE = "application/json; charset=" + CHARSET;
@@ -65,7 +69,6 @@ namespace cn.bmob.config
         internal static int REQUEST_TIMEOUT = 10 * 1000;
 
     }
-
 
     public enum SDKTarget
     {

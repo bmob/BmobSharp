@@ -43,7 +43,8 @@ namespace cn.bmob.io
         /// <returns>文件地址</returns>
         public string getPath()
         {
-            return Configuration.FILE_NET + this.url;
+            return Configuration.FILE_URL  + this.url;
+            //return Configuration.FILE_NET + this.url;
         }
 
         //public Image Image
